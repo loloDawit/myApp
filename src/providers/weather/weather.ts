@@ -1,5 +1,6 @@
-import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { Http } from '@angular/http'; 
+import { Injectable } from '@angular/core'; // so we can inject it as a dependeny 
+import 'rxjs/add/operator/map';
 
 /*
   Generated class for the WeatherProvider provider.
@@ -9,9 +10,18 @@ import { Injectable } from '@angular/core';
 */
 @Injectable()
 export class WeatherProvider {
+  apiKey = "17972df9b627b7e8";    // apiKey for weather api 
+  url; 
 
-  constructor(public http: HttpClient) {
+
+  constructor(public http: Http) {
+    // http://api.wunderground.com/api/17972df9b627b7e8/conditions/q/CA/San_Francisco.json
+    this.url = 'http://api.wunderground.com/api/'+this.apiKey+'/conditions/q';
     console.log('Hello WeatherProvider Provider');
+  }
+
+  getWeather(city,state){
+    return this.http.get(this.url+'/'+state+'/'+city+'.json').map(res => res.json());
   }
 
 }
