@@ -1,6 +1,6 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>Home</ion-title>
+    <ion-title>Weather</ion-title>
   </ion-navbar>
 </ion-header>
 
@@ -8,9 +8,9 @@
   <ion-grid *ngIf="weather">
     <ion-row>
       <ion-col width-50 offset-25>
-        <h2 class=" location">{{weather.display_location.full}}</h2>
-        <h3 class=" location">{{weather.display_location.country}}</h3>
-        <div class=" location"><img src="{{weather.icon_url}}" alt=""></div>
+        <h2 class="location">{{weather.display_location.full}}</h2>
+        <h3 class="location">{{weather.display_location.country}}</h3>
+        <div class="location"><img src="{{weather.icon_url}}" alt=""></div>
         <h3 class="desc">{{weather.weather}}</h3>
         <h1 class="temp">{{weather.temp_f}}&deg;</h1>
       </ion-col>
