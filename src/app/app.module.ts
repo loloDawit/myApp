@@ -26,9 +26,9 @@ import { WeatherProvider } from '../providers/weather/weather';
   ],
   imports: [
     BrowserModule,
-    IonicStorageModule.forRoot(),
     HttpModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    IonicStorageModule.forRoot()
   ],
   bootstrap: [IonicApp],
   entryComponents: [
